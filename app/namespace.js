@@ -9,8 +9,6 @@ define([
 
 function($, _, backstrapp) {
   
-  console.log('hä');
-
   var ns = _.extend({
 
     // Create a custom object with a nested Views object
@@ -19,6 +17,8 @@ function($, _, backstrapp) {
     }
 
   }, backstrapp);
+
+  console.log(ns);
 
   return ns;
 });
