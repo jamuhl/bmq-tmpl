@@ -52,6 +52,20 @@ function(ns, $, Backbone, Example) {
   });
 
   app.addInitializer(function(options) {
+    // we just have to override eventNameAttr:
+    Backbone.CQRS.hub.init({ 
+        eventNameAttr: 'event',
+        parseEvent: function(msg) {
+            //msg.payload.revision = msg.head.revision;
+            return msg;
+        },
+        getCommandId: function(data) {
+            return data.commandId;
+        }
+    });
+  });
+
+  app.addInitializer(function(options) {
       // will instanciate all registered routers
       // app.appRouter = new calix.routers.AppRouter();
       app.router = new Router();

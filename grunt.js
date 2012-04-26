@@ -54,13 +54,13 @@ module.exports = function(grunt) {
 
     stylus: {
       "assets/css/main.css": [
-        "app/stylus/**/*.styl"
+        "stylus/**/*.styl"
       ]
     },
 
     jade: {
       "assets/templates": [
-        "app/jade/**/*.jade"
+        "jade/**/*.jade"
       ]
     },
 
