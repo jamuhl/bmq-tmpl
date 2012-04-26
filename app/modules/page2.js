@@ -14,7 +14,7 @@ function(ns) {
   // Create a new module
   var Page2 = ns.module();
 
-  Page2.Controller = ns.Controller.extend({
+  var Controller = ns.Controller.extend({
         page2: function() {
 
             var view = new Page2.Views.Page();
@@ -23,9 +23,9 @@ function(ns) {
         }
   });
 
-  Page2.controller = new Page2.Controller();
+  Page2.controller = new Controller();
 
-  Page2.Router = ns.Router.extend({
+  var Router = ns.Router.extend({
       appRoutes: {
             "page2": "page2"
         },
@@ -33,7 +33,7 @@ function(ns) {
         controller: Page2.controller
   });
 
-  Page2.router = new Page2.Router();
+  var router = new Router();
 
   // This will fetch the tutorial template and render it.
   Page2.Views.Page = ns.ItemView.extend({
