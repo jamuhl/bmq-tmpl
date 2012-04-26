@@ -7,6 +7,7 @@ public/css/main.css
 public/js/client.css
 public/js/client.min.css
 sessions.db
+.DS_Store
 
 # Use wildcards as well
 *~

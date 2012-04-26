@@ -1,0 +1,17 @@
+{
+  "author": "jamuhl"
+  , "name": "bmq-tmpl"
+  , "version": "0.0.1"
+  , "private": true
+  , "main": "server.js"
+  , "engines": {
+        "node": ">= v0.6.0"
+    }
+  , "dependencies": {
+    }
+  , "devDependencies": {
+    "handlebars": ">=0.0.1"
+  }
+  , "scripts": {
+  }
+}

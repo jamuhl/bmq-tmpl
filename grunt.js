@@ -65,8 +65,8 @@ module.exports = function(grunt) {
     concat: {
       "dist/debug/require.js": [
         "assets/js/libs/almond.js",
-        "dist/debug/require.js",
-        "dist/debug/templates.js"
+        "dist/debug/templates.js",
+        "dist/debug/require.js"
       ]
     },
 
