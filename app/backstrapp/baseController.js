@@ -9,12 +9,16 @@ function(_, Backbone) {
 
         navigate: function(fragment, args, options) {
             if (!_.isArray(args)) {
-                options = args;
+                options = args || {};
                 args = [];
             }
 
             // call route function with provided args
-            this[fragment].apply(this, args);
+            if (this[fragment]) {
+                this[fragment].apply(this, args);
+            } else { 
+                options.trigger = true;
+            }
 
             Backbone.history.navigate(fragment, options);
         }//,
