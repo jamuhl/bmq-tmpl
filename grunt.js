@@ -9,7 +9,7 @@ module.exports = function(grunt) {
     meta: {
       handlebars: {
         trimPath: true,
-        basePath: 'app/templates/',
+        basePath: 'assets/templates/',
         extension: '.html'
       }
     },
@@ -53,14 +53,14 @@ module.exports = function(grunt) {
     // },
 
     jade: {
-      "app/templates": [
+      "assets/templates": [
         "app/jade/**/*.jade"
       ]
     },
 
     handlebars: {
       "dist/debug/templates.js": [
-        "app/templates/**/*.html"
+        "assets/templates/**/*.html"
       ]
     },
 
@@ -108,6 +108,10 @@ module.exports = function(grunt) {
     //  until documentation has been written.
     server: {
       files: { "favicon.ico": "favicon.ico" },
+
+      folders: {
+          "app/templates": "assets/templates"
+      },
 
       debug: {
         files: { "favicon.ico": "favicon.ico" },
