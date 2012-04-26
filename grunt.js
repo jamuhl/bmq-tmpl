@@ -52,6 +52,12 @@ module.exports = function(grunt) {
     //   ]
     // },
 
+    jade: {
+      "app/templates": [
+        "app/jade/**/*.jade"
+      ]
+    },
+
     handlebars: {
       "dist/debug/templates.js": [
         "app/templates/**/*.html"
@@ -142,6 +148,13 @@ module.exports = function(grunt) {
 
       // Do not wrap everything in an IIFE
       wrap: false
+    },
+
+    watch: {
+      jade: {
+        files: "app/jade/**/*.jade",
+        tasks: "jade"
+      }
     }
 
   });
@@ -153,7 +166,7 @@ module.exports = function(grunt) {
   // dist/debug/templates.js, compile all the application code into
   // dist/debug/require.js, and then concatenate the require/define shim
   // almond.js and dist/debug/templates.js into the require.js file.
-  grunt.registerTask("default", "clean lint handlebars requirejs concat");
+  grunt.registerTask("default", "clean lint jade handlebars requirejs concat");
 
   // The debug task is simply an alias to default to remain consistent with
   // debug/release.

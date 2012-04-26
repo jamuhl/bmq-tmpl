@@ -10,7 +10,9 @@
   , "dependencies": {
     }
   , "devDependencies": {
-    "handlebars": ">=0.0.1"
+      "handlebars": ">= 0.0.1"
+    , "underscore": ">= 0.0.1"
+    , "jade": ">= 0.0.1"
   }
   , "scripts": {
   }
