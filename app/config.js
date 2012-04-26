@@ -7,7 +7,6 @@ require.config({
     // JavaScript folders
     libs: '../assets/js/libs',
     plugins: '../assets/js/plugins',
-    //backstrapp: '/backstrapp',
 
     // Libraries
     almond: '../assets/js/libs/almond',

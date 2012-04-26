@@ -3,4 +3,4 @@ define([
   'use!jsonSerialize'
 ],
 
-function() {});
+function() { return {}; });

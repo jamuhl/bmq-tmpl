@@ -30,10 +30,9 @@ function(_, Backbone, Marionette, Handlebars, Loader) {
 
 
     Backbone.Marionette.TemplateCache.loadTemplate = function(templateId, callback) {
-        var self = this
-          , path = 'app/templates/' + templateId + '.html';
+        var self = this;
 
-        Loader.fetchTemplate(path, function(tmpl) {
+        Loader.fetchTemplate(templateId, function(tmpl) {
             var ret = (_.isFunction(tmpl)) ? tmpl : Handlebars.compile(tmpl);
             callback.call(self, ret);
         });      

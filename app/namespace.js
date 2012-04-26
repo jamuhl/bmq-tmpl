@@ -9,7 +9,7 @@ define([
 
 function($, _, backstrapp) {
   
-  console.log(backstrapp.app);
+  console.log('hä');
 
   var ns = _.extend({
 

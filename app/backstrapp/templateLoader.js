@@ -1,10 +1,11 @@
 define([
   // Libs
   "jquery",
-  "use!underscore"
+  "use!underscore",
+  "use!handlebars"
 ],
 
-function($, _) {
+function($, _, Handlebars) {
   // Put application wide code here
 
   return {
@@ -19,11 +20,15 @@ function($, _) {
       // Should be an instant synchronous way of getting the template, if it
       // exists in the JST object.
       if (JST[path]) {
+        var tmpl = Handlebars.template(JST[path]);
         if (_.isFunction(done)) {
-          done(JST[path]);
+          done(tmpl);
         }
 
-        return def.resolve(JST[path]);
+        return def.resolve(tmpl);
+      }
+      else {
+        path = 'app/templates/' + path + '.html';
       }
 
       // Fetch it asynchronously if not available from JST, ensure that

@@ -6,6 +6,14 @@ module.exports = function(grunt) {
 
   grunt.initConfig({
 
+    meta: {
+      handlebars: {
+        trimPath: true,
+        basePath: 'app/templates/',
+        extension: '.html'
+      }
+    },
+
     // The clean task ensures all files are removed from the dist/ directory so
     // that no files linger from previous builds.
     clean: ["dist/"],
@@ -37,7 +45,14 @@ module.exports = function(grunt) {
     //
     // The concat task depends on this file to exist, so if you decide to
     // remove this, ensure concat is updated accordingly.
-    jst: {
+
+    // jst: {
+    //   "dist/debug/templates.js": [
+    //     "app/templates/**/*.html"
+    //   ]
+    // },
+
+    handlebars: {
       "dist/debug/templates.js": [
         "app/templates/**/*.html"
       ]
@@ -50,8 +65,8 @@ module.exports = function(grunt) {
     concat: {
       "dist/debug/require.js": [
         "assets/js/libs/almond.js",
-        "dist/debug/templates.js",
-        "dist/debug/require.js"
+        "dist/debug/require.js",
+        "dist/debug/templates.js"
       ]
     },
 
@@ -131,12 +146,14 @@ module.exports = function(grunt) {
 
   });
 
+  grunt.loadTasks('./build/tasks');
+
   // The default task will remove all contents inside the dist/ folder, lint
   // all your code, precompile all the underscore templates into
   // dist/debug/templates.js, compile all the application code into
   // dist/debug/require.js, and then concatenate the require/define shim
   // almond.js and dist/debug/templates.js into the require.js file.
-  grunt.registerTask("default", "clean lint jst requirejs concat");
+  grunt.registerTask("default", "clean lint handlebars requirejs concat");
 
   // The debug task is simply an alias to default to remain consistent with
   // debug/release.
