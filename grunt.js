@@ -52,6 +52,12 @@ module.exports = function(grunt) {
     //   ]
     // },
 
+    stylus: {
+      "assets/css/main.css": [
+        "app/stylus/**/*.styl"
+      ]
+    },
+
     jade: {
       "assets/templates": [
         "app/jade/**/*.jade"
@@ -82,7 +88,8 @@ module.exports = function(grunt) {
     // only want to load one stylesheet in index.html.
     mincss: {
       "dist/release/index.css": [
-        "assets/css/style.css"
+        "assets/css/style.css",
+        "assets/css/main.css"
       ]
     },
 
@@ -158,6 +165,11 @@ module.exports = function(grunt) {
       jade: {
         files: "app/jade/**/*.jade",
         tasks: "jade"
+      },
+
+      stylus: {
+        files: "app/stylus/**/*.styl",
+        tasks: "stylus"
       }
     }
 
@@ -170,7 +182,7 @@ module.exports = function(grunt) {
   // dist/debug/templates.js, compile all the application code into
   // dist/debug/require.js, and then concatenate the require/define shim
   // almond.js and dist/debug/templates.js into the require.js file.
-  grunt.registerTask("default", "clean lint jade handlebars requirejs concat");
+  grunt.registerTask("default", "clean lint jade stylus handlebars requirejs concat");
 
   // The debug task is simply an alias to default to remain consistent with
   // debug/release.
