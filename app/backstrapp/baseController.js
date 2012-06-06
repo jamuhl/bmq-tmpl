@@ -13,15 +13,21 @@ function(_, Backbone) {
                 args = [];
             }
 
+            options = options || {};
+
             // call route function with provided args
             if (this[fragment]) {
                 this[fragment].apply(this, args);
             } else { 
                 options.trigger = true;
+
+                for (var i = 0, len = args.length; i < len; i++) {
+                    fragment = fragment + '/' + args[i];
+                }
             }
 
             Backbone.history.navigate(fragment, options);
-        }//,
+        }
 
         // authRoute: function() {
         //     calix.app.user.auth();
