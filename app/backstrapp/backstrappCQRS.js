@@ -1,7 +1,7 @@
 define([
-  'use!underscore',  
-  'use!backbone',
-  'use!cqrs'
+  'underscore',  
+  'backbone',
+  'cqrs'
 ],
 
 function(_, Backbone, CQRS) {

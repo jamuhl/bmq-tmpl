@@ -1,6 +1,6 @@
 define([
-  'use!almond',
-  'use!jsonSerialize'
+  'augment',
+  'jsonSerialize'
 ],
 
 function() { return {}; });

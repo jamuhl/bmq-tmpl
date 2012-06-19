@@ -1,8 +1,8 @@
 define([
-  'use!underscore',
-  'use!objectId',
-  'use!backbone',
-  'use!cqrs'
+  'underscore',
+  'objectId',
+  'backbone',
+  'cqrs'
 ],
 
 function(_, ObjectId, Backbone, CQRS) {

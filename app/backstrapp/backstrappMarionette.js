@@ -1,8 +1,8 @@
 define([
-  'use!underscore',  
-  'use!backbone',
-  'use!marionette',
-  'use!handlebars',
+  'underscore',  
+  'backbone',
+  'marionette',
+  'handlebars',
   './templateLoader'
 ],
 

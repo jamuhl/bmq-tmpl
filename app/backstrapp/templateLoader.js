@@ -1,8 +1,8 @@
 define([
   // Libs
   "jquery",
-  "use!underscore",
-  "use!handlebars"
+  "underscore",
+  "handlebars"
 ],
 
 function($, _, Handlebars) {

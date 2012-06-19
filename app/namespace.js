@@ -1,9 +1,9 @@
 define([
   // Libs
   "jquery",
-  "use!underscore",
+  "underscore",
   "backstrapp/backstrapp",
-  "use!backbone",
+  "backbone",
   "preconditions"
 ],
 

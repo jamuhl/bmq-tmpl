@@ -1,5 +1,5 @@
 define([
-	'use!underscore',
+	'underscore',
     './backstrappCQRS',
     './backstrappMarionette',
     './baseCollection',
