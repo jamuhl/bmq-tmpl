@@ -1,6 +1,6 @@
 define([
-  'underscore',  
-  'backbone'
+    'underscore',  
+    'backbone'
 ],
 
 function(_, Backbone) {
@@ -34,6 +34,8 @@ function(_, Backbone) {
                 
     });
 
+    var qs = new QS();
+
 
     originalGetFragment = Backbone.History.prototype.getFragment;
 
@@ -41,9 +43,9 @@ function(_, Backbone) {
         var fragment = originalGetFragment.apply(this, arguments),
             // intercept and get querystring
             parts = fragment.split('?'),
-            qs = parts[1];
-        if (qs) {
-            parseQS(qs);
+            query = parts[1];
+        if (query) {
+            parseQS(query);
         }
         return parts[0];
     };
@@ -58,6 +60,6 @@ function(_, Backbone) {
         });
     }
 
-    return QS;
+    return qs;
 
 });

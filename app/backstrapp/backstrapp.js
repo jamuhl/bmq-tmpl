@@ -11,7 +11,7 @@ define([
     './qs'
 ],
 
-function(_, BackstrappCQRS, BackstrappMarionette, BaseCollection, BaseModel, BaseController, BaseRouter, ExtendedItemView, BaseCommand, QS) {
+function(_, BackstrappCQRS, BackstrappMarionette, BaseCollection, BaseModel, BaseController, BaseRouter, ExtendedItemView, BaseCommand, qs) {
 
 	var ns = _.extend(BackstrappCQRS, BackstrappMarionette);
 
@@ -21,7 +21,7 @@ function(_, BackstrappCQRS, BackstrappMarionette, BaseCollection, BaseModel, Bas
 	ns.Router = BaseRouter;
 	ns.ExtendedItemView = ExtendedItemView;
 	ns.Command = BaseCommand;
-	ns.qs = new QS();
+	ns.qs = qs;
 
 	return ns;
 });
